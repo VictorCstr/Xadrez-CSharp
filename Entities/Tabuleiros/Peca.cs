@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace Projeto_Xadrez.Entities.Tabuleiros
 {
     public class Peca
@@ -12,13 +7,18 @@ namespace Projeto_Xadrez.Entities.Tabuleiros
         public int QuantidadeMovimentos { get; protected set; }
         public Tabuleiro Tab { get; protected set; }
 
-        public Peca(Posicao posicao, Cor cor, Tabuleiro tab)
+        public Peca(Tabuleiro tab, Cor cor)
         {
-            PosicaoPeca = posicao;
-            CorPeca = cor;
+            PosicaoPeca = null!;
             Tab = tab;
+            CorPeca = cor;
             QuantidadeMovimentos = 0;
-
         }
+
+        public override string ToString()
+        {
+            return "P";
+        }
+
     }
 }

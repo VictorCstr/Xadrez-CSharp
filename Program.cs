@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Globalization;
-using Projeto_Xadrez.Entities.Tabuleiros;
 using Projeto_Xadrez.Entities;
+using Projeto_Xadrez.Entities.Tabuleiros;
+using Projeto_Xadrez.Entities.Xadrez;
 
 namespace Projeto_Xadrez // Note: actual namespace depends on the project name.
 {
@@ -9,9 +10,13 @@ namespace Projeto_Xadrez // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            Tabuleiro tabuleiro = new Tabuleiro(8, 8);
+            Tabuleiro tab = new(8, 8);
 
-            Tela.ImprimirTabuleiro(tabuleiro);
+            tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
+            tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
+            tab.ColocarPeca(new Rei(tab, Cor.Preta), new Posicao(2, 4));
+
+            Tela.ImprimirTabuleiro(tab);
 
         }
 
