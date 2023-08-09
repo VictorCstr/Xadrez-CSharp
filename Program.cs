@@ -11,16 +11,16 @@ namespace Projeto_Xadrez // Note: actual namespace depends on the project name.
         {
             try
             {
-                PosicaoXadrez xadrez = new(2, 'a');
-                System.Console.WriteLine(xadrez);
-                System.Console.WriteLine(xadrez.ConverterParaPosicao());
-                // Tabuleiro tab = new(8, 8);
 
-                // tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-                // tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
-                // tab.ColocarPeca(new Rei(tab, Cor.Preta), new Posicao(2, 4));
+                Tabuleiro tab = new(8, 8);
 
-                // Tela.ImprimirTabuleiro(tab);
+                tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
+                tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
+                tab.ColocarPeca(new Rei(tab, Cor.Branca), new Posicao(2, 4));
+                tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(6, 3));
+                tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(6, 7));
+
+                Tela.ImprimirTabuleiro(tab);
             }
             catch (TabuleiroException e)
             {

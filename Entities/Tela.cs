@@ -8,19 +8,41 @@ namespace Projeto_Xadrez.Entities
         {
             for (int i = 0; i < tab.Linhas; i++)
             {
+                Console.Write(tab.Linhas - i + " ");
                 for (int j = 0; j < tab.Colunas; j++)
                 {
+
                     if (tab.PecasExistentes(i, j) == null)
                     {
                         Console.Write("- ");
                     }
                     else
                     {
-                        Console.Write(tab.PecasExistentes(i, j) + " ");
+                        Peca peca = tab.PecasExistentes(i, j);
+                        Console.Write(ImprimirPeca(peca));
+                        Console.Write(" ");
+                        Console.ForegroundColor = ConsoleColor.White;
                     }
                 }
                 Console.WriteLine();
             }
+            Console.Write(" A B C D E F G H ");
+        }
+
+        public static Peca ImprimirPeca(Peca peca)
+        {
+
+            if (peca.CorPeca == Cor.Branca)
+            {
+                return peca;
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                return peca;
+            }
+
+
         }
     }
 }
