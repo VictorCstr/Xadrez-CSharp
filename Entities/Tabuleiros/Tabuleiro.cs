@@ -32,9 +32,23 @@ namespace Projeto_Xadrez.Entities.Tabuleiros
             {
                 throw new TabuleiroException($"Peça {p} na Posição {pos}, não é valida!");
             }
+
             Pecas[pos.Linha, pos.Coluna] = p;
 
             p.PosicaoPeca = pos;
+        }
+
+        public Peca RetirarPeca(Posicao pos)
+        {
+            if (PecasExistentes(pos) == null)
+            {
+                return null!;
+            }
+            Peca aux = PecasExistentes(pos);
+            aux.PosicaoPeca = null!;
+            Pecas[pos.Linha, pos.Coluna] = null!;
+
+            return aux;
         }
 
         public bool PosicaoValida(Posicao pos)

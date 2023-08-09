@@ -11,16 +11,25 @@ namespace Projeto_Xadrez // Note: actual namespace depends on the project name.
         {
             try
             {
+                PartidaXadrez Partida = new();
 
-                Tabuleiro tab = new(8, 8);
+                while (!Partida.Terminada)
+                {
+                    Console.Clear();
+                    Tela.ImprimirTabuleiro(Partida.Tab);
 
-                tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(0, 0));
-                tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(1, 3));
-                tab.ColocarPeca(new Rei(tab, Cor.Branca), new Posicao(2, 4));
-                tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(6, 3));
-                tab.ColocarPeca(new Torre(tab, Cor.Preta), new Posicao(6, 7));
+                    Console.Write("Origem da peça que você quer mexer: ");
+                    Posicao origem = Tela.LerPosicaoXadrez().ConverterParaPosicaoNaMatriz();
 
-                Tela.ImprimirTabuleiro(tab);
+                    Console.Write("Destino da peça que você quer mexer: ");
+                    Posicao destino = Tela.LerPosicaoXadrez().ConverterParaPosicaoNaMatriz();
+
+                    Partida.ExecutarMovimento(origem, destino);
+
+
+
+                }
+
             }
             catch (TabuleiroException e)
             {

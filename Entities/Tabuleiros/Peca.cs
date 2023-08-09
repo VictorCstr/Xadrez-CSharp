@@ -15,6 +15,11 @@ namespace Projeto_Xadrez.Entities.Tabuleiros
             QuantidadeMovimentos = 0;
         }
 
+        public void IncrementarMovimentos()
+        {
+            QuantidadeMovimentos++;
+        }
+
         public override string ToString()
         {
             return "P";

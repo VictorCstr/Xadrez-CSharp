@@ -13,7 +13,7 @@ namespace Projeto_Xadrez.Entities.Tabuleiros
 
         public override string ToString()
         {
-            return $"{Linha} {Coluna}";
+            return $"{Linha}, {Coluna}";
         }
     }
 }

@@ -1,4 +1,5 @@
 using Projeto_Xadrez.Entities.Tabuleiros;
+using Projeto_Xadrez.Entities.Xadrez;
 
 namespace Projeto_Xadrez.Entities
 {
@@ -26,7 +27,7 @@ namespace Projeto_Xadrez.Entities
                 }
                 Console.WriteLine();
             }
-            Console.Write(" A B C D E F G H ");
+            Console.Write("  A B C D E F G H ");
         }
 
         public static Peca ImprimirPeca(Peca peca)
@@ -41,8 +42,17 @@ namespace Projeto_Xadrez.Entities
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 return peca;
             }
+        }
 
+        public static PosicaoXadrez LerPosicaoXadrez()
+        {
+            string s = Console.ReadLine()!;
 
+            char coluna = s[0];
+
+            int linha = int.Parse(s[1] + " ");
+
+            return new PosicaoXadrez(coluna, linha);
         }
     }
 }

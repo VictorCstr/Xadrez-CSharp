@@ -4,24 +4,23 @@ namespace Projeto_Xadrez.Entities.Xadrez
 {
     public class PosicaoXadrez
     {
-        public int Linha { get; set; }
         public char Coluna { get; set; }
+        public int Linha { get; set; }
 
-
-        public PosicaoXadrez(int linha, char coluna)
+        public PosicaoXadrez(char coluna, int linha)
         {
-            Linha = linha;
             Coluna = coluna;
+            Linha = linha;
         }
 
-        public Posicao ConverterParaPosicao()
+        public Posicao ConverterParaPosicaoNaMatriz()
         {
             return new Posicao(8 - Linha, Coluna - 'a');
         }
 
         public override string ToString()
         {
-            return "" + Coluna + Linha;
+            return $"{Coluna}{Linha}";
         }
     }
 }
